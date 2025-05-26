@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  # 🆕 API用のルート追加
+  # ルートページ
+  root "application#index"
+
+  # API用のルート
   namespace :api do
     namespace :v1 do
-      # 認証関連
-      devise_for :users, controllers: {
-        registrations: 'api/v1/auth/registrations',
-        sessions: 'api/v1/auth/sessions'
-      }
+      # 認証関連のルート
+      post '/auth/register', to: 'auth/registrations#create'
+      post '/auth/login', to: 'auth/sessions#create'
+      delete '/auth/logout', to: 'auth/sessions#destroy'
 
       # ユーザー情報
       resources :users, only: [:show, :update] do
@@ -14,9 +16,12 @@ Rails.application.routes.draw do
           get :profile
         end
       end
+
+      # 現在のユーザー情報取得用
+      get '/me', to: 'users#profile'
     end
   end
-  
-  # 既存のルート...
-  root "application#index"  # 必要に応じて変更
+
+  # ヘルスチェック用
+  get '/health', to: 'application#index'
 end
