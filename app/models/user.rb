@@ -12,14 +12,14 @@ class User < ApplicationRecord
   validates :birth_date, presence: true
 
   # アソシエーション
-  has_many :notifications, dependent: :destroy
-  has_many :favorites, dependent: :destroy
-  has_many :favorite_flowers, through: :favorites, source: :flower
-  has_many :user_regions, dependent: :destroy
-  has_many :regions, through: :user_regions
+  # has_many :notifications, dependent: :destroy
+  # has_many :favorites, dependent: :destroy
+  # has_many :favorite_flowers, through: :favorites, source: :flower
+  # has_many :user_regions, dependent: :destroy
+  # has_many :regions, through: :user_regions
 
   # スコープ
-  scope :active, -> { where(deleted_at: nil) }
+  # scope :active, -> { where(deleted_at: nil) }
 
   # メソッド
   def full_name
@@ -30,14 +30,14 @@ class User < ApplicationRecord
     "#{last_name_kana} #{first_name_kana}"
   end
 
-  def age
-    return nil unless birth_date
+  # def age
+    #return nil unless birth_date
     
-    today = Date.current
-    age = today.year - birth_date.year
-    age -= 1 if today < birth_date + age.years
-    age
-  end
+    # today = Date.current
+    #age = today.year - birth_date.year
+    #age -= 1 if today < birth_date + age.years
+    #age
+  #end
 
   # JWT生成
   def generate_jwt
