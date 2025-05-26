@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.0"
 
@@ -33,7 +34,7 @@ gem "jbuilder"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"        # パスワード暗号化
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -57,8 +58,8 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
-
+  gem "spring"
+  gem "listen", "~> 3.3"
 end
 
 group :test do
@@ -70,3 +71,11 @@ end
 group :production do
   gem 'pg'
 end
+
+# 認証機能のために追加
+gem 'devise'                     # 認証システム
+
+# API機能のために追加
+gem "rack-cors"                    # CORS設定（フロントエンドとの通信用）
+gem "active_model_serializers"     # JSON API用
+gem "jwt"                         # JWT認証用

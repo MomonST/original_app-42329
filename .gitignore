@@ -33,3 +33,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# 秘密のファイルを管理しないため
+.env
+.env.local
+.env.*.local
