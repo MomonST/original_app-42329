@@ -70,3 +70,22 @@ end
 group :production do
   gem 'pg'
 end
+
+# 認証機能のために追加
+gem 'devise'                     # 認証システム
+
+# API機能のために追加
+gem "rack-cors"                    # CORS設定（フロントエンドとの通信用）
+gem "active_model_serializers"     # JSON API用
+gem "jwt"                         # JWT認証用
+
+gem 'mini_magick'
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+gem 'kaminari'                #ページネーション（ページ分割表示）用
+=======
+gem 'kaminari'                #ページネーション（ページ分割表示）用
+>>>>>>> Stashed changes
+=======
+gem 'kaminari'                #ページネーション（ページ分割表示）用
+>>>>>>> Stashed changes
