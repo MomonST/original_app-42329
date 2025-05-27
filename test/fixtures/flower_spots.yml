@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flower: one
+  mountain: one
+  best_viewing_time: MyString
+  notes: MyText
+
+two:
+  flower: two
+  mountain: two
+  best_viewing_time: MyString
+  notes: MyText

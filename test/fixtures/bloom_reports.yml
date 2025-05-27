@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  flower_spot: one
+  title: MyString
+  description: MyText
+  bloom_status: 1
+  view_count: 1
+  likes_count: 1
+  status: 1
+  reported_at: 2025-05-27 09:27:19
+
+two:
+  user: two
+  flower_spot: two
+  title: MyString
+  description: MyText
+  bloom_status: 1
+  view_count: 1
+  likes_count: 1
+  status: 1
+  reported_at: 2025-05-27 09:27:19

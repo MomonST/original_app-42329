@@ -23,5 +23,28 @@ module OriginalAppUserId
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    
+    # API設定を追加
+    config.api_only = false  # 通常のRailsアプリとして維持
+    
+    # CORS設定
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins Rails.env.development? ? 'http://localhost:3000' : ENV['FRONTEND_URL']
+        resource '*',
+          headers: :any,
+          methods: [:get, :post, :put, :patch, :delete, :options, :head],
+          credentials: true
+      end
+    end
+    
+    # タイムゾーン
+    config.time_zone = 'Tokyo'
+
+    # Active Storage設定
+    config.active_storage.variant_processor = :mini_magick
+    
+    # 画像サイズ制限
+    config.active_storage.max_file_size = 10.megabytes
   end
 end
