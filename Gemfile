@@ -80,4 +80,12 @@ gem "active_model_serializers"     # JSON API用
 gem "jwt"                         # JWT認証用
 
 gem 'mini_magick'
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 gem 'kaminari'                #ページネーション（ページ分割表示）用
+=======
+gem 'kaminari'                #ページネーション（ページ分割表示）用
+>>>>>>> Stashed changes
+=======
+gem 'kaminari'                #ページネーション（ページ分割表示）用
+>>>>>>> Stashed changes

@@ -30,6 +30,14 @@ Rails.application.routes.draw do
       get '/rankings/users', to: 'bloom_reports#rankings', defaults: { type: 'users_by_posts' }
       get '/rankings/likes', to: 'bloom_reports#rankings', defaults: { type: 'posts_by_likes' }
       get '/rankings/views', to: 'bloom_reports#rankings', defaults: { type: 'posts_by_views' }
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+    end
+  end
+>>>>>>> Stashed changes
 
   # ヘルスチェック用
   get '/health', to: 'application#index'
