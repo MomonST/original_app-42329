@@ -286,6 +286,9 @@ DEPENDENCIES
   kaminari
   listen (~> 3.3)
   mini_magick
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   mysql2 (~> 0.5)
   pg
