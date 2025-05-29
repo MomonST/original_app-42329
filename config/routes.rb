@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # 既存のルート...
+  root "application#index"  # 必要に応じて変更
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  # API用のルート追加
+  namespace :api do
+    namespace :v1 do
+      # 認証関連のルート
+      post '/auth/register', to: 'auth/registrations#create'
+      post '/auth/login', to: 'auth/sessions#create'
+      delete '/auth/logout', to: 'auth/sessions#destroy'
 
      # ユーザー情報
       resources :users, only: [:show, :update] do
@@ -30,15 +35,10 @@ Rails.application.routes.draw do
       get '/rankings/users', to: 'bloom_reports#rankings', defaults: { type: 'users_by_posts' }
       get '/rankings/likes', to: 'bloom_reports#rankings', defaults: { type: 'posts_by_likes' }
       get '/rankings/views', to: 'bloom_reports#rankings', defaults: { type: 'posts_by_views' }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
     end
   end
->>>>>>> Stashed changes
-
+  
   # ヘルスチェック用
   get '/health', to: 'application#index'
+  
 end

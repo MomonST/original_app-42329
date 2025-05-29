@@ -36,3 +36,8 @@
 
 /node_modules
 /frontend/node_modules
+
+# 秘密のファイルを管理しないため
+.env
+.env.local
+.env.*.local
